@@ -30,7 +30,7 @@ The long-term goal is to run these services as production-style microservices wi
 - **Kubernetes** deployment (later) + **Helm** for packaging deployments
 - Optional: **event-driven communication** for async workflows (message broker)
 
-## How to Run (placeholder)
+## How to Run
 This will be updated with exact commands once the build and runtime approach is finalized.
 
 Typical local workflow targets:
