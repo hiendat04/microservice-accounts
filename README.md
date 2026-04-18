@@ -39,7 +39,7 @@ Typical local workflow targets:
 - Run the whole system via gateway
 
 ## API Docs
-- Run the project and go to this link to open Swagger/ OpenAPI docs: http://localhost:9000/swagger-ui/index.html
+- Run the project and go to this link to open Swagger/ OpenAPI docs: http://localhost:8080/swagger-ui/index.html
 
 ## Project Approach / Plan
 High-level plan for this service:
