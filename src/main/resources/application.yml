@@ -14,3 +14,15 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to the Accounts Microservice"
+  contactDetails:
+    name: "Dat Mai"
+    email: "hiendat04@gmail.com"
+  onCallSupport:
+    - (555) 123-4567
+    - (555) 987-6543
