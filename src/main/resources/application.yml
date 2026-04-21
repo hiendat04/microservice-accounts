@@ -14,12 +14,20 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  config:
+    import:
+      - "application_qa.yml"
+      - "application_prod.yml"
+  profiles:
+    active:
+      - "qa"
+#      - "prod"
 
 build:
-  version: "1.0"
+  version: "3.0"
 
 accounts:
-  message: "Welcome to the Accounts Microservice"
+  message: "Welcome to the local Accounts Microservice"
   contactDetails:
     name: "Dat Mai"
     email: "hiendat04@gmail.com"
