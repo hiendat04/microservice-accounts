@@ -22,3 +22,23 @@ management:
     web:
       exposure:
         include: "*"
+  endpoint:
+    shutdown:
+      access: unrestricted # Allow shutdown endpoint without authentication for testing purposes
+  info:
+    env:
+      enabled: true
+
+eureka:
+  instance:
+    prefer-ip-address: true # Don't have DNS mapping setup, so use IP address
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+info:
+  app:
+    name: "accounts"
+    description: "This microservice manages customer accounts and related information."
+    version: "1.0.0"
