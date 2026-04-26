@@ -42,3 +42,10 @@ info:
     name: "accounts"
     description: "This microservice manages customer accounts and related information."
     version: "1.0.0"
+
+
+logging:
+  level:
+    com:
+      microservice:
+        accounts: DEBUG

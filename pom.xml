@@ -175,7 +175,7 @@
                 <version>3.5.1</version>
                 <configuration>
                     <to>
-                        <image>hiendat04/${project.artifactId}:v3</image>
+                        <image>hiendat04/${project.artifactId}:v5</image>
                     </to>
                 </configuration>
             </plugin>
