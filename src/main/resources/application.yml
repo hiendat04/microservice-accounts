@@ -16,15 +16,27 @@ spring:
     show-sql: true
   config:
     import: "optional:configserver:http://localhost:8071/"
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+  health:
+    readinessstate:
+      enabled: true
+    livenessstate:
+      enabled: true
   endpoint:
     shutdown:
       access: unrestricted # Allow shutdown endpoint without authentication for testing purposes
+    health:
+      probes:
+        enabled: true
   info:
     env:
       enabled: true
@@ -43,9 +55,18 @@ info:
     description: "This microservice manages customer accounts and related information."
     version: "1.0.0"
 
-
 logging:
   level:
     com:
       microservice:
         accounts: DEBUG
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 10 # How many requests required to change state from closed to open
+        permitted-number-of-calls-in-half-open-state: 2 # How many requests allowed in half-open state before deciding to close or open again
+        failureRateThreshold: 50 # Percentage of failed requests to trigger circuit breaker
+        wait-duration-in-open-state: 10000 # Time in milliseconds to wait before transitioning from open to half-open state
+
