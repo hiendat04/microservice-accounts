@@ -69,4 +69,14 @@ resilience4j:
         permitted-number-of-calls-in-half-open-state: 2 # How many requests allowed in half-open state before deciding to close or open again
         failureRateThreshold: 50 # Percentage of failed requests to trigger circuit breaker
         wait-duration-in-open-state: 10000 # Time in milliseconds to wait before transitioning from open to half-open state
-
+  retry:
+    configs:
+      default:
+        max-attempts: 3
+        wait-duration: 500
+        enable-exponential-backoff: true
+        exponential-backoff-multiplier: 2
+        ignore-exceptions:
+          - java.lang.NullPointerException
+        retry-exceptions:
+          - java.util.concurrent.TimeoutException
