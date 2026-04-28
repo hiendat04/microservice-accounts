@@ -80,3 +80,11 @@ resilience4j:
           - java.lang.NullPointerException
         retry-exceptions:
           - java.util.concurrent.TimeoutException
+  ratelimiter:
+    configs:
+      default:
+        timeout-duration: 1000 # Time in milliseconds to wait for permission before throwing a RequestNotPermitted exception
+        limit-refresh-period: 5000 # For every 5 seconds, the rate limiter will reset the count of calls
+        limit-for-period: 1 # Allow only 1 call per 5 seconds
+
+
